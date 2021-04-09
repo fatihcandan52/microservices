@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30611.23
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Services", "Services", "{F676438E-D79F-416F-A421-1C892008F9C5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Catalog", "Catalog", "{007E0957-80FB-41E9-8279-88E2C31CE1FE}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{FD8436D1-2C58-4A4D-ABF9-BF2E7798C490}"
+	ProjectSection(SolutionItems) = preProject
+		ports.txt = ports.txt
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Microservices.CatalogAPI", "Services\Catalog\Microservices.CatalogAPI\Microservices.CatalogAPI.csproj", "{AC812654-C0D9-4D29-A809-456B02B54EA6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC812654-C0D9-4D29-A809-456B02B54EA6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC812654-C0D9-4D29-A809-456B02B54EA6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC812654-C0D9-4D29-A809-456B02B54EA6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC812654-C0D9-4D29-A809-456B02B54EA6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{007E0957-80FB-41E9-8279-88E2C31CE1FE} = {F676438E-D79F-416F-A421-1C892008F9C5}
+		{AC812654-C0D9-4D29-A809-456B02B54EA6} = {007E0957-80FB-41E9-8279-88E2C31CE1FE}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2AC9ED41-B16A-4802-B2F0-2EB85C91697B}
+	EndGlobalSection
+EndGlobal

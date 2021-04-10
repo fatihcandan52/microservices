@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace Microservices.CatalogAPI.Services
 {
-    public interface ICategoryServices
+    public interface ICategoryService
     {
         Task<DataResult<List<CategoryDto>>> GetAllAsync();
         Task<DataResult<CategoryDto>> Createsync(CategoryDto categoryDto);

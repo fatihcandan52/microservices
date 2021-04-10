@@ -1,9 +1,11 @@
+using Microservices.CatalogAPI.Extensions;
 using Microservices.CatalogAPI.Types;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.Extensions.Options;
 
 namespace Microservices.CatalogAPI
 {
@@ -25,9 +27,14 @@ namespace Microservices.CatalogAPI
 
             services.AddAutoMapper(typeof(Startup));
 
+            services.AddRegisterServices();
+
             services.Configure<DatabaseSettings>(Configuration.GetSection(nameof(DatabaseSettings)));
 
-            services.AddSingleton<IDatabaseSettings, DatabaseSettings>();
+            services.AddSingleton<IDatabaseSettings>(opt =>
+            {
+                return opt.GetRequiredService<IOptions<DatabaseSettings>>().Value;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

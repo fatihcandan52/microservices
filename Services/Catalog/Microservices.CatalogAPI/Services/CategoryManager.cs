@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Microservices.CatalogAPI.Services
 {
-    public class CategoryManager : ICategoryServices
+    public class CategoryManager : ICategoryService
     {
         private readonly IMongoCollection<Category> _categoryCollection;
         private readonly IMapper _mapper;

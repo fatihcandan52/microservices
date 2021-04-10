@@ -19,6 +19,8 @@ namespace Microservices.CatalogAPI.Models
         public Feature Feature { get; set; }
         [BsonRepresentation(BsonType.ObjectId)]
         public string CategoryId { get; set; }
+        [BsonRepresentation(BsonType.ObjectId)]
+        public string UserId { get; set; }
         [BsonIgnore]
         public Category Category { get; set; }
     }

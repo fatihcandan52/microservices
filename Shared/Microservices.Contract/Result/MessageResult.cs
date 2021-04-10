@@ -4,7 +4,7 @@ using System.Text.Json.Serialization;
 
 namespace Microservices.Contract.Result
 {
-    public class Result
+    public class MessageResult
     {
         [JsonIgnore]
         public StatusCode StatusCode { get; private set; }
@@ -12,20 +12,31 @@ namespace Microservices.Contract.Result
         public bool IsSuccess { get; private set; }
         public List<string> Errors { get; private set; }
 
-        public static Result Success(StatusCode statusCode)
+        public static MessageResult Success(StatusCode statusCode)
         {
-            return new Result
+            return new MessageResult
             {
                 StatusCode = statusCode,
                 IsSuccess = true
             };
         }
 
-        public static Result Error(StatusCode statusCode)
+        public static MessageResult Error(List<string> errors, StatusCode statusCode)
         {
-            return new Result
+            return new MessageResult
             {
                 StatusCode = statusCode,
+                Errors = errors,
+                IsSuccess = true
+            };
+        }
+
+        public static MessageResult Error(string error, StatusCode statusCode)
+        {
+            return new MessageResult
+            {
+                StatusCode = statusCode,
+                Errors = new List<string> { error },
                 IsSuccess = false
             };
         }

@@ -24,16 +24,6 @@ namespace Microservices.Contract.Result
             };
         }
 
-        //public static DataResult<T> Success(StatusCode statusCode)
-        //{
-        //    return new DataResult<T>
-        //    {
-        //        Data = default(T),
-        //        StatusCode = statusCode,
-        //        IsSuccess = true
-        //    };
-        //}
-
         public static DataResult<T> Error(List<string> errors, StatusCode statusCode)
         {
             return new DataResult<T>

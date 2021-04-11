@@ -13,7 +13,7 @@ namespace Microservices.Contract.Base
             };
         }
 
-        public IActionResult CreateResult(MessageResult result)
+        public IActionResult CreateMesageResult(MessageResult result)
         {
             return new ObjectResult(result)
             {

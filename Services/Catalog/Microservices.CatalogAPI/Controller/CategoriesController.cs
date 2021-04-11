@@ -17,6 +17,7 @@ namespace Microservices.CatalogAPI.Controller
             _categoryService = categoryService;
         }
 
+        [HttpGet]
         public async Task<IActionResult> GetAll()
         {
             var result = await _categoryService.GetAllAsync();

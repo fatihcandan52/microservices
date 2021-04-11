@@ -50,14 +50,14 @@ namespace Microservices.CatalogAPI.Controller
         public async Task<IActionResult> Update(CourseUpdateDto input)
         {
             var result = await _courseService.UpdateAsync(input);
-            return CreateResult(result);
+            return CreateMesageResult(result);
         }
 
         [HttpDelete]
         public async Task<IActionResult> Delete(string id)
         {
             var result = await _courseService.DeleteAsync(id);
-            return CreateResult(result);
+            return CreateMesageResult(result);
         }
     }
 }

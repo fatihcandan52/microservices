@@ -1,2 +1,5 @@
+﻿
+İzlenmeyenler => 26,27,28
+İzlenmeyenler => 31,
 
 Catalog API => http://localhost:5011

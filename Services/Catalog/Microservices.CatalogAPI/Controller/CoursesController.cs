@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace Microservices.CatalogAPI.Controller
 {
-    [Route("api/[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class CoursesController : MicroserviceBaseController
     {

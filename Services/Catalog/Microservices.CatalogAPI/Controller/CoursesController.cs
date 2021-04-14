@@ -31,7 +31,7 @@ namespace Microservices.CatalogAPI.Controller
             return CreateResult(result);
         }
 
-        [HttpGet("{userId}")]
+        [HttpGet]
         [Route("/api/[controller]/GetAllByUserId/{userId}")]
         public async Task<IActionResult> GetAllByUserId(string userId)
         {
@@ -53,7 +53,7 @@ namespace Microservices.CatalogAPI.Controller
             return CreateMesageResult(result);
         }
 
-        [HttpDelete]
+        [HttpDelete("{id}")]
         public async Task<IActionResult> Delete(string id)
         {
             var result = await _courseService.DeleteAsync(id);

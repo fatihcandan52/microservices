@@ -5,7 +5,7 @@ namespace Microservices.Contract.Base
 {
     public class MicroserviceBaseController : Controller
     {
-        public IActionResult CreateResult<T>(DataResult<T> result)
+        protected IActionResult CreateResult<T>(DataResult<T> result)
         {
             return new ObjectResult(result)
             {
@@ -13,7 +13,7 @@ namespace Microservices.Contract.Base
             };
         }
 
-        public IActionResult CreateMesageResult(MessageResult result)
+        protected IActionResult CreateMesageResult(MessageResult result)
         {
             return new ObjectResult(result)
             {

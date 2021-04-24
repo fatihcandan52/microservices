@@ -5,6 +5,7 @@
 using IdentityServer4;
 using Microservices.IdentityServer.Data;
 using Microservices.IdentityServer.Models;
+using Microservices.IdentityServer.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -55,6 +56,9 @@ namespace Microservices.IdentityServer
                 .AddInMemoryClients(Config.Clients)
                 .AddAspNetIdentity<ApplicationUser>();
 
+            // Kullanıcı adı parola gönderildiğinde identity server cevaplayabilmesi için eklendi
+            builder.AddResourceOwnerValidator<IdentityResourceOwnerPasswordValidator>();
+
             // not recommended for production - you need to store your key material somewhere secure
             builder.AddDeveloperSigningCredential();
 
@@ -62,7 +66,7 @@ namespace Microservices.IdentityServer
                 .AddGoogle(options =>
                 {
                     options.SignInScheme = IdentityServerConstants.ExternalCookieAuthenticationScheme;
-                    
+
                     // register your IdentityServer with Google at https://console.developers.google.com
                     // enable the Google+ API
                     // set the redirect URI to https://localhost:5001/signin-google

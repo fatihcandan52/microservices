@@ -19,7 +19,7 @@
     },
     "Microservices.CatalogAPI": {
       "commandName": "Project",
-      "launchBrowser": true,
+      "launchBrowser": false,
       "launchUrl": "",
       "applicationUrl": "http://localhost:5011",
       "environmentVariables": {

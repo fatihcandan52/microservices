@@ -1,5 +1,6 @@
 using Microservices.CatalogAPI.Extensions;
 using Microservices.CatalogAPI.Types;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
@@ -35,6 +36,14 @@ namespace Microservices.CatalogAPI
             {
                 return opt.GetRequiredService<IOptions<DatabaseSettings>>().Value;
             });
+
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(opt =>
+                {
+                    opt.Authority = Configuration["IdentityServerURL"];
+                    opt.Audience = "resource_catalog";
+                    opt.RequireHttpsMetadata = false;
+                });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +62,8 @@ namespace Microservices.CatalogAPI
             });
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

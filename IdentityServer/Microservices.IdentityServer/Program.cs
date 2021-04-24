@@ -53,8 +53,8 @@ namespace Microservices.IdentityServer
                 using (var scope = host.Services.CreateScope())
                 {
                     var serviceProvider = scope.ServiceProvider;
-                    var dbContext = serviceProvider.GetRequiredService<ApplicationDbContext>();
-                    dbContext.Database.Migrate();
+                    //var dbContext = serviceProvider.GetRequiredService<ApplicationDbContext>();
+                    //dbContext.Database.Migrate();
 
                     var userManager = serviceProvider.GetRequiredService<UserManager<ApplicationUser>>();
                     if (!userManager.Users.Any())
@@ -64,7 +64,7 @@ namespace Microservices.IdentityServer
                             UserName = "fatihcandan52",
                             Email = "fatihcandan52@gmail.com",
                             City = "Ankara",
-                        }, "Fc9152317*-").Wait();
+                        }, "123456").Wait();
                     }
 
                 }

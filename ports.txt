@@ -1,7 +1,6 @@
-﻿
-İzlenmeyenler => 26,27,28
-İzlenmeyenler => 31,
+﻿portainer => http://localhost:9000 => fatihcandan52 => 123456
 
+sql server => localhost:1434 => sa 123456
 
 Identity Server => http://localhost:5001
 
@@ -9,3 +8,16 @@ Catalog API => http://localhost:5011
 
 Photo API => http://localhost:5012
 
+
+
+docker containers
+-----------------------------------------------------------------------------------
+
+// Postgres SQL
+docker run --name postgresSQL -e POSTGRES_PASSWORD=123456 -d -p 5432:5432 postgres
+
+//Docker Mongo DB
+docker run -d  --name mongoDb  -p 27017:27017 -e MONGO_INITDB_ROOT_USERNAME=mongoadmin -e MONGO_INITDB_ROOT_PASSWORD=123456 mongo
+
+//Docker MsSQL Server Windows Developer
+docker run -d -p 1434:1433 -e sa_password=123456 -e ACCEPT_EULA=Y microsoft/mssql-server-windows-developer

@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Microservices.PhotoAPI.Controllers
 {
-    [Route("api/v1//[controller]")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class PhotosController : MicroserviceBaseController
     {
@@ -18,7 +18,7 @@ namespace Microservices.PhotoAPI.Controllers
         {
             if (photo != null && photo.Length > 0)
             {
-                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", photo.FileName);
+                var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/photos", photo.FileName);
 
                 using (var stream = new FileStream(path, FileMode.Create))
                 {
@@ -42,10 +42,10 @@ namespace Microservices.PhotoAPI.Controllers
             return CreateMesageResult(failResult);
         }
 
-
+        [HttpDelete]
         public IActionResult PhotoDelete(string photoUrl)
         {
-            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot", photoUrl);
+            var path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/photos", photoUrl);
 
             if (!System.IO.File.Exists(path))
             {

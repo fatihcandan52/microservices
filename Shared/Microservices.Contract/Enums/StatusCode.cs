@@ -6,5 +6,6 @@
         OkNoContent = 204, //Dönüş Body si olmayan başarılı kayıt
         NotFound = 404, // Kayıt bulunamadığında dönüş
         Failed = 400, // İşlem başarısız olduğunda
+        Error = 500, // İşlem başarısız olduğunda
     }
 }
